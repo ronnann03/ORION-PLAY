@@ -8,39 +8,72 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tipografía de marca -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Tema visual Orion Play -->
+    <link rel="stylesheet" href="../css/orion-theme.css">
     <style>
-        body { background-color: #f8f9fa; }
+        body {
+            background-color: var(--op-space-950);
+            color: var(--op-starlight);
+            font-family: var(--op-font-body);
+        }
+        h1, h2, h3, h4, h5 { font-family: var(--op-font-display); }
+
+        header.bg-primary {
+            background: linear-gradient(135deg, var(--op-space-900), var(--op-nova) 160%) !important;
+        }
+
+        hr { border-top: 1px solid var(--op-space-border); opacity: 1; }
+
+        .card.game-card {
+            background-color: var(--op-space-900);
+            border: 1px solid var(--op-space-border);
+            color: var(--op-starlight);
+        }
+        .card-text.text-muted { color: var(--op-starlight-dim) !important; }
         .card-img-top { height: 200px; object-fit: cover; }
         .game-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .game-card:hover { 
-            transform: translateY(-15px) scale(1.03); 
-            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.3) !important; 
-            border-color: #6366f1;
+        .game-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(124, 92, 252, 0.35) !important;
+            border-color: var(--op-nova);
             z-index: 10;
         }
+
+        .badge { font-family: var(--op-font-body); font-weight: 600; }
+        .badge.bg-danger { background-color: rgba(255, 93, 115, 0.18) !important; color: var(--op-ember-bright) !important; }
+        .badge.bg-info { background-color: rgba(47, 230, 196, 0.18) !important; color: var(--op-ion) !important; }
+        .badge.bg-warning { background-color: rgba(243, 194, 2, 0.18) !important; color: var(--op-gold) !important; }
+        .badge.bg-dark { background-color: rgba(150, 121, 255, 0.18) !important; color: var(--op-nova-bright) !important; }
+
+        .text-success { color: var(--op-ion) !important; font-family: var(--op-font-mono); }
+        .btn-outline-primary { color: var(--op-nova-bright); border-color: var(--op-nova); }
+        .btn-outline-primary:hover { background-color: var(--op-nova); border-color: var(--op-nova); color: #fff; }
+        .btn-primary { background-color: var(--op-nova); border-color: var(--op-nova); }
+        .btn-primary:hover { background-color: var(--op-nova-bright); border-color: var(--op-nova-bright); }
+
+        a.text-decoration-none { color: var(--op-nova-bright); }
+
+        footer.bg-dark { background-color: var(--op-space-950) !important; border-top: 1px solid var(--op-space-border); }
     </style>
 </head>
-<body>
+<body class="orion-theme-scope">
 
-    <!-- Navbar Bootstrap -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html"><i class="fas fa-gamepad text-primary"></i> Orion Play</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="products.html">Tienda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Navbar único (idéntico en las 8 páginas) -->
+    <header class="op-nav">
+        <a href="../index.html" class="op-nav__brand"><span class="orion-mark" aria-hidden="true"></span> Orion Play</a>
+        <nav class="op-nav__links">
+            <a href="../index.html" class="op-nav__link">Inicio</a>
+            <a href="products.html" class="op-nav__link is-active">Tienda</a>
+            <a href="../tailwind/cart.html" class="op-nav__link">Carrito</a>
+            <a href="../materialize/login.html" class="op-nav__link">Ingresar</a>
+            <a href="../mdb/register.html" class="op-nav__link">Registro</a>
+        </nav>
+    </header>
 
     <!-- Header -->
-    <header class="bg-primary text-white text-center py-5">
+    <header class="bg-primary text-white text-center py-5 constellation-bg">
         <div class="container">
             <h1 class="display-4 fw-bold">Nuestra Colección</h1>
             <p class="lead">Explora los mejores juegos para PC y consolas.</p>
@@ -59,7 +92,7 @@
             <!-- Producto 1 -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 game-card">
-                    <img src="assets/images/game1.jpg" class="card-img-top" alt="Juego 1">
+                    <img src="../assets/images/game1.jpg" class="card-img-top" alt="Juego 1">
                     <div class="card-body d-flex flex-column">
                         <span class="badge bg-danger mb-2" style="width: fit-content;">Acción</span>
                         <h5 class="card-title">Cyber Battle 2077</h5>
@@ -74,7 +107,7 @@
             <!-- Producto 2 -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 game-card">
-                    <img src="assets/images/game2.jpg" class="card-img-top" alt="Juego 2">
+                    <img src="../assets/images/game2.jpg" class="card-img-top" alt="Juego 2">
                     <div class="card-body d-flex flex-column">
                         <span class="badge bg-info mb-2" style="width: fit-content;">Aventura</span>
                         <h5 class="card-title">Fantasy Quest</h5>
@@ -89,7 +122,7 @@
             <!-- Producto 3 -->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card h-100 game-card">
-                    <img src="assets/images/game3.jpg" class="card-img-top" alt="Juego 3">
+                    <img src="../assets/images/game3.jpg" class="card-img-top" alt="Juego 3">
                     <div class="card-body d-flex flex-column">
                         <span class="badge bg-warning text-dark mb-2" style="width: fit-content;">Simulación</span>
                         <h5 class="card-title">Space Explorer</h5>
@@ -112,28 +145,28 @@
         <div class="row g-4 mb-5">
             <div class="col-12 col-md-6">
                 <div class="card h-100 game-card">
-                    <img src="assets/images/console.jpg" class="card-img-top" alt="Consola">
+                    <img src="../assets/images/console.jpg" class="card-img-top" alt="Consola">
                     <div class="card-body d-flex flex-column">
                         <span class="badge bg-dark mb-2" style="width: fit-content;">Hardware</span>
                         <h5 class="card-title">PlayBox Series X</h5>
                         <p class="card-text text-muted">La consola más potente del mercado. Juega en 4K real a 120fps.</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
                             <span class="fs-4 fw-bold text-success">S/ 2,499.00</span>
-                            <a href="cart.html" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Añadir</a>
+                            <a href="../tailwind/cart.html" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Añadir</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6">
                 <div class="card h-100 game-card">
-                    <img src="assets/images/keyboard.jpg" class="card-img-top" alt="Teclado">
+                    <img src="../assets/images/keyboard.jpg" class="card-img-top" alt="Teclado">
                     <div class="card-body d-flex flex-column">
                         <span class="badge bg-dark mb-2" style="width: fit-content;">Periféricos</span>
                         <h5 class="card-title">Teclado Mecánico RGB Pro</h5>
                         <p class="card-text text-muted">Switches rojos ultra-rápidos para ventaja competitiva.</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
                             <span class="fs-4 fw-bold text-success">S/ 499.00</span>
-                            <a href="cart.html" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Añadir</a>
+                            <a href="../tailwind/cart.html" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Añadir</a>
                         </div>
                     </div>
                 </div>
@@ -149,26 +182,26 @@
         <div class="row g-4">
             <div class="col-12 col-md-6">
                 <div class="card h-100 game-card flex-row align-items-center p-3">
-                    <img src="assets/images/keyboard.jpg" style="width: 150px; height: 150px; object-fit: cover; border-radius: 8px;" alt="Mouse">
+                    <img src="../assets/images/keyboard.jpg" style="width: 150px; height: 150px; object-fit: cover; border-radius: 8px;" alt="Mouse">
                     <div class="ms-3 w-100">
                         <h5 class="card-title">Mouse Óptico Elite</h5>
                         <p class="card-text text-muted mb-2">Sensor 25K DPI. Precisión absoluta.</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="fs-5 fw-bold text-success">S/ 299.00</span>
-                            <a href="cart.html" class="btn btn-sm btn-outline-primary">Añadir</a>
+                            <a href="../tailwind/cart.html" class="btn btn-sm btn-outline-primary">Añadir</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6">
                 <div class="card h-100 game-card flex-row align-items-center p-3">
-                    <img src="assets/images/headset.jpg" style="width: 150px; height: 150px; object-fit: cover; border-radius: 8px;" alt="Audífonos">
+                    <img src="../assets/images/headset.jpg" style="width: 150px; height: 150px; object-fit: cover; border-radius: 8px;" alt="Audífonos">
                     <div class="ms-3 w-100">
                         <h5 class="card-title">Headset Inalámbrico 7.1</h5>
                         <p class="card-text text-muted mb-2">Sonido envolvente y cancelación de ruido.</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="fs-5 fw-bold text-success">S/ 549.00</span>
-                            <a href="cart.html" class="btn btn-sm btn-outline-primary">Añadir</a>
+                            <a href="../tailwind/cart.html" class="btn btn-sm btn-outline-primary">Añadir</a>
                         </div>
                     </div>
                 </div>
@@ -181,7 +214,5 @@
         <p class="mb-0">&copy; 2026 Orion Play. Construido con Bootstrap 5.</p>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

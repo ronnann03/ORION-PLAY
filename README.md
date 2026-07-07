@@ -4,13 +4,33 @@ Este repositorio contiene la implementación del proyecto **Orion Play**, una ti
 
 ## 🎯 Cumplimiento de la Rúbrica (Nivel Excelente)
 
-Este proyecto ha sido estructurado meticulosamente aislando cada tecnología requerida en diferentes páginas. Esto evita conflictos de CSS y demuestra un uso modular, justificado y profesional de las herramientas.
+Este proyecto ha sido estructurado meticulosamente aislando cada tecnología requerida en diferentes páginas **y en su propia carpeta**: cada framework vive junto a la pantalla y los archivos que lo usan. Esto evita conflictos de CSS y demuestra un uso modular, justificado y profesional de las herramientas.
+
+```
+orion-play/
+├── index.html          # Punto de entrada del sitio (usa SASS)
+├── scss/                # Fuente SASS de index.html
+├── less/
+│   └── profile.html    # Vista de Perfil (usa LESS)
+├── bootstrap/
+│   ├── products.html
+│   └── product-detail.html
+├── tailwind/
+│   ├── cart.html
+│   └── checkout.html
+├── materialize/
+│   └── login.html
+├── mdb/
+│   └── register.html
+├── css/                 # CSS compilado (main-sass.css, main-less.css) + tema compartido
+└── assets/              # Imágenes compartidas por todas las páginas
+```
 
 ### 1. Preprocesadores (LESS y SASS)
 *   **SASS (`index.html` y `/scss`)**: 
     *   **Implementación:** Se usó para la página de inicio.
-    *   **Evidencias:** Uso de variables (`$primary-color`), anidamiento (`.navbar { .nav-links { ... } }`), mixins (`@mixin glassmorphism`), e importación de parciales (`@import 'variables'`). Compilado a `css/main-sass.css`.
-*   **LESS (`profile.html` y `/less`)**: 
+    *   **Evidencias:** Uso de variables (`$primary-color`), anidamiento (`.hero { &::before { ... } }`), mixins (`@mixin glassmorphism`), e importación de parciales (`@import 'variables'`). Compilado a `css/main-sass.css`.
+*   **LESS (`less/profile.html` y `/less`)**: 
     *   **Implementación:** Se usó para la vista de Perfil de Usuario.
     *   **Evidencias:** Uso de variables (`@bg-color`), operaciones matemáticas para paddings (`@large-padding: @base-padding * 2`), funciones de color (`darken()`, `lighten()`), y mixins (`.box-shadow()`). Compilado a `css/main-less.css`.
 
@@ -27,11 +47,14 @@ Este proyecto ha sido estructurado meticulosamente aislando cada tecnología req
 *   Los frameworks CSS elegidos (Bootstrap, Tailwind, etc.) garantizan compatibilidad móvil y de navegadores por defecto.
 
 ### 4. Frameworks CSS (4 Requeridos)
-Implementados de forma aislada para evitar conflictos:
-1.  **Bootstrap 5 (`products.html`, `product-detail.html`)**: Utilizado para las galerías de productos por su excelente sistema de grillas (Grid System) y componentes de tarjetas listos para usar.
-2.  **Tailwind CSS (`cart.html`, `checkout.html`)**: Utilizado vía CDN para demostrar la construcción rápida de interfaces mediante utility-classes (Flexbox, paddings, tipografía), ideal para flujos de pago modernos.
-3.  **Materialize CSS (`login.html`)**: Implementado para el formulario de inicio de sesión, destacando sus inputs animados y el diseño limpio basado en Material Design clásico.
-4.  **Material Design for Bootstrap - MDB (`register.html`)**: Usado para demostrar otra variante de Material Design, aprovechando su estética tipo "glassmorphism" y componentes avanzados en el formulario de registro.
+Cada uno vive en su propia carpeta para evitar conflictos:
+1.  **Bootstrap 5 (`/bootstrap/products.html`, `/bootstrap/product-detail.html`)**: Utilizado para las galerías de productos por su excelente sistema de grillas (Grid System) y componentes de tarjetas listos para usar.
+2.  **Tailwind CSS (`/tailwind/cart.html`, `/tailwind/checkout.html`)**: Utilizado vía CDN para demostrar la construcción rápida de interfaces mediante utility-classes (Flexbox, paddings, tipografía), ideal para flujos de pago modernos.
+3.  **Materialize CSS (`/materialize/login.html`)**: Implementado para el formulario de inicio de sesión, destacando sus inputs animados y el diseño limpio basado en Material Design clásico.
+4.  **Material Design for Bootstrap - MDB (`/mdb/register.html`)**: Usado para demostrar otra variante de Material Design, aprovechando su estética tipo "glassmorphism" y componentes avanzados en el formulario de registro.
+
+### 5. Navegación compartida
+El navbar (`.op-nav`, definido en `css/orion-theme.css`) es la única pieza que se repite igual en las 8 páginas — no es parte de la demostración de ningún framework, es la navegación común del sitio.
 
 ---
 
@@ -50,8 +73,8 @@ Implementados de forma aislada para evitar conflictos:
     ```bash
     npm run build
     ```
-4.  Abre el archivo `index.html` en tu navegador preferido (doble clic o usando una extensión como Live Server).
-5.  Navega a través de las diferentes páginas (Tienda, Carrito, Login, Registro, Perfil) usando los enlaces de los menús.
+4.  Abre el archivo `index.html` (en la raíz del proyecto) en tu navegador preferido (doble clic o usando una extensión como Live Server).
+5.  Navega a través de las diferentes páginas (Tienda en `/bootstrap`, Carrito en `/tailwind`, Login en `/materialize`, Registro en `/mdb`, Perfil en `/less`) usando los enlaces del menú superior.
 
 ---
 

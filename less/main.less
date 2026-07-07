@@ -17,8 +17,29 @@ body {
   background-color: @bg-card;
   border-radius: @border-radius;
   padding: @large-padding;
+  position: relative;
+  overflow: hidden;
   .box-shadow();
-  
+
+  // Firma visual: campo de estrellas sutil detrás de la tarjeta
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(1.5px 1.5px at 12% 25%, rgba(255, 255, 255, 0.35), transparent),
+      radial-gradient(2px 2px at 45% 10%, rgba(124, 92, 252, 0.6), transparent),
+      radial-gradient(1.5px 1.5px at 70% 30%, rgba(255, 255, 255, 0.3), transparent),
+      radial-gradient(1.5px 1.5px at 90% 15%, rgba(255, 255, 255, 0.4), transparent);
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
   // Nested rules
   .header {
     .flex-center();
@@ -40,6 +61,16 @@ body {
       color: @text-color;
     }
 
+    .orion-mark {
+      display: inline-block;
+      width: 26px;
+      height: 10px;
+      margin-top: @small-padding;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='10' viewBox='0 0 26 10'%3E%3Ccircle cx='3' cy='8' r='2' fill='%239679FF'/%3E%3Ccircle cx='13' cy='5' r='2' fill='%237C5CFC'/%3E%3Ccircle cx='23' cy='2' r='2' fill='%239679FF'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
     p {
       color: @text-muted;
       margin-top: @small-padding;
@@ -54,6 +85,7 @@ body {
       text-align: center;
       
       h3 {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
         font-size: 2rem;
         color: @secondary-color;
         margin: 0;
@@ -80,5 +112,11 @@ body {
   &:hover {
     // Math operation for color darkening
     background-color: darken(@primary-color, 10%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.001ms !important;
   }
 }

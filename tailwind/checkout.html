@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Orion Play</title>
+    <!-- Tipografía de marca -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS (CDN for demonstration) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        space: { 950: '#060812', 900: '#0F1428', 800: '#1B2140' },
+                        nova: { 400: '#9679FF', 500: '#7C5CFC', 600: '#6A45E8' },
+                        ember: { 400: '#FF8095', 500: '#FF5D73' },
+                        ion: { 400: '#5CEEDA', 500: '#2FE6C4' },
+                        starlight: '#F4F6FB',
+                        stardim: '#9AA3C7',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    borderRadius: {
+                        op: '14px',
+                    },
+                    boxShadow: {
+                        op: '0 10px 30px rgba(2, 4, 14, 0.45)',
+                    },
+                },
+            },
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tema visual Orion Play (marca + firma) -->
+    <link rel="stylesheet" href="../css/orion-theme.css">
+</head>
+<body class="bg-space-950 text-starlight font-sans min-h-screen flex flex-col">
+
+    <!-- Navbar único (idéntico en las 8 páginas) -->
+    <header class="op-nav">
+        <a href="../index.html" class="op-nav__brand"><span class="orion-mark" aria-hidden="true"></span> Orion Play</a>
+        <nav class="op-nav__links">
+            <a href="../index.html" class="op-nav__link">Inicio</a>
+            <a href="../bootstrap/products.html" class="op-nav__link">Tienda</a>
+            <a href="cart.html" class="op-nav__link">Carrito</a>
+            <a href="../materialize/login.html" class="op-nav__link">Ingresar</a>
+            <a href="../mdb/register.html" class="op-nav__link">Registro</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-8 max-w-2xl">
+        <div class="bg-space-900 rounded-op shadow-op border border-space-800 overflow-hidden">
+            <div class="p-6 border-b border-space-800 bg-nova-500/10">
+                <h2 class="text-2xl font-display font-bold text-starlight">Finalizar Compra</h2>
+                <p class="text-nova-400 font-mono">Total: S/ 229.00</p>
+            </div>
+
+            <form class="p-6 space-y-6" action="../index.html">
+                <!-- Payment Details -->
+                <div>
+                    <h3 class="text-lg font-semibold border-b border-space-800 pb-2 mb-4">Detalles de Pago</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-stardim mb-1">Nombre en la Tarjeta</label>
+                            <input type="text" class="w-full bg-space-800 border border-space-800 rounded-md px-4 py-2 text-starlight placeholder-stardim/60 focus:ring-2 focus:ring-nova-500 focus:border-nova-500 outline-none transition" placeholder="Juan Pérez" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-stardim mb-1">Número de Tarjeta</label>
+                            <input type="text" class="w-full bg-space-800 border border-space-800 rounded-md px-4 py-2 text-starlight placeholder-stardim/60 focus:ring-2 focus:ring-nova-500 focus:border-nova-500 outline-none transition" placeholder="0000 0000 0000 0000" required>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-1/2">
+                                <label class="block text-sm font-medium text-stardim mb-1">Vencimiento</label>
+                                <input type="text" class="w-full bg-space-800 border border-space-800 rounded-md px-4 py-2 text-starlight placeholder-stardim/60 focus:ring-2 focus:ring-nova-500 focus:border-nova-500 outline-none transition" placeholder="MM/YY" required>
+                            </div>
+                            <div class="w-1/2">
+                                <label class="block text-sm font-medium text-stardim mb-1">CVC</label>
+                                <input type="text" class="w-full bg-space-800 border border-space-800 rounded-md px-4 py-2 text-starlight placeholder-stardim/60 focus:ring-2 focus:ring-nova-500 focus:border-nova-500 outline-none transition" placeholder="123" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-ion-500 hover:bg-ion-400 text-space-950 font-bold py-3 px-4 rounded-op transition duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                    Confirmar y Pagar S/ 229.00
+                </button>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>

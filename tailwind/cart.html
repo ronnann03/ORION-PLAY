@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito | Orion Play</title>
+    <!-- Tipografía de marca -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS (CDN for demonstration) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        space: { 950: '#060812', 900: '#0F1428', 800: '#1B2140' },
+                        nova: { 400: '#9679FF', 500: '#7C5CFC', 600: '#6A45E8' },
+                        ember: { 400: '#FF8095', 500: '#FF5D73' },
+                        starlight: '#F4F6FB',
+                        stardim: '#9AA3C7',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    borderRadius: {
+                        op: '14px',
+                    },
+                    boxShadow: {
+                        op: '0 10px 30px rgba(2, 4, 14, 0.45)',
+                    },
+                },
+            },
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tema visual Orion Play (marca + firma) -->
+    <link rel="stylesheet" href="../css/orion-theme.css">
+</head>
+<body class="bg-space-950 text-starlight font-sans">
+
+    <!-- Navbar único (idéntico en las 8 páginas) -->
+    <header class="op-nav">
+        <a href="../index.html" class="op-nav__brand"><span class="orion-mark" aria-hidden="true"></span> Orion Play</a>
+        <nav class="op-nav__links">
+            <a href="../index.html" class="op-nav__link">Inicio</a>
+            <a href="../bootstrap/products.html" class="op-nav__link">Tienda</a>
+            <a href="cart.html" class="op-nav__link is-active">Carrito</a>
+            <a href="../materialize/login.html" class="op-nav__link">Ingresar</a>
+            <a href="../mdb/register.html" class="op-nav__link">Registro</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+        <h1 class="text-3xl font-display font-bold mb-6">Tu Carrito de Compras</h1>
+
+        <div class="bg-space-900 rounded-op shadow-op border border-space-800 overflow-hidden">
+            <!-- Cart Item -->
+            <div class="p-6 border-b border-space-800 flex flex-col sm:flex-row items-center gap-4">
+                <img src="../assets/images/game1.jpg" alt="Cyber Battle 2077" class="w-24 h-24 object-cover rounded">
+                <div class="flex-grow text-center sm:text-left">
+                    <h2 class="text-xl font-semibold">Cyber Battle 2077</h2>
+                    <p class="text-stardim">PC, Digital</p>
+                </div>
+                <div class="text-xl font-bold font-mono text-nova-400">S/ 229.00</div>
+                <button class="text-ember-400 hover:text-ember-500 p-2"><i class="fas fa-trash"></i></button>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="p-6 bg-space-800/40 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="text-lg">
+                    Total a pagar: <span class="text-2xl font-bold font-mono text-starlight">S/ 229.00</span>
+                </div>
+                <a href="checkout.html" class="bg-nova-500 hover:bg-nova-600 text-white px-8 py-3 rounded-op font-semibold transition-colors duration-300 w-full sm:w-auto text-center">
+                    Proceder al Checkout
+                </a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

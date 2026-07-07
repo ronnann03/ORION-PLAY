@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Battle 2077 | Orion Play</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tipografía de marca -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Tema visual Orion Play -->
+    <link rel="stylesheet" href="../css/orion-theme.css">
+    <style>
+        body {
+            background-color: var(--op-space-950);
+            color: var(--op-starlight);
+            font-family: var(--op-font-body);
+        }
+        h1, h2 { font-family: var(--op-font-display); }
+        hr { border-top: 1px solid var(--op-space-border); opacity: 1; }
+
+        .row.bg-white {
+            background-color: var(--op-space-900) !important;
+            border: 1px solid var(--op-space-border);
+        }
+        .lead.text-muted { color: var(--op-starlight-dim) !important; }
+
+        .badge.bg-primary { background-color: rgba(150, 121, 255, 0.18) !important; color: var(--op-nova-bright) !important; }
+        .text-success { color: var(--op-ion) !important; font-family: var(--op-font-mono); }
+        .text-warning { color: var(--op-gold) !important; }
+        .text-muted { color: var(--op-starlight-dim) !important; }
+
+        .btn-primary { background-color: var(--op-nova); border-color: var(--op-nova); }
+        .btn-primary:hover { background-color: var(--op-nova-bright); border-color: var(--op-nova-bright); }
+        .btn-outline-secondary { color: var(--op-ember-bright); border-color: var(--op-ember); }
+        .btn-outline-secondary:hover { background-color: var(--op-ember); border-color: var(--op-ember); color: #fff; }
+    </style>
+</head>
+<body class="orion-theme-scope">
+
+    <!-- Navbar único (idéntico en las 8 páginas) -->
+    <header class="op-nav">
+        <a href="../index.html" class="op-nav__brand"><span class="orion-mark" aria-hidden="true"></span> Orion Play</a>
+        <nav class="op-nav__links">
+            <a href="../index.html" class="op-nav__link">Inicio</a>
+            <a href="products.html" class="op-nav__link is-active">Tienda</a>
+            <a href="../tailwind/cart.html" class="op-nav__link">Carrito</a>
+            <a href="../materialize/login.html" class="op-nav__link">Ingresar</a>
+            <a href="../mdb/register.html" class="op-nav__link">Registro</a>
+        </nav>
+    </header>
+
+    <main class="container mt-5">
+        <div class="row bg-white p-4 rounded shadow-sm">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <img src="../assets/images/game1.jpg" class="img-fluid rounded" alt="Cyber Battle 2077">
+            </div>
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+                <span class="badge bg-primary mb-2" style="width: fit-content;">Acción / RPG</span>
+                <h1 class="display-5 fw-bold">Cyber Battle 2077</h1>
+                <p class="lead text-muted">Adéntrate en Night City, una megalópolis obsesionada con el poder, el glamour y la modificación corporal.</p>
+                <hr>
+                <div class="d-flex align-items-center mb-4">
+                    <h2 class="text-success mb-0 me-3">S/ 229.00</h2>
+                    <div class="text-warning">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        <span class="text-muted ms-1 fs-6">(4.5/5)</span>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 d-md-block">
+                    <a href="../tailwind/cart.html" class="btn btn-primary btn-lg"><i class="fas fa-cart-plus"></i> Añadir al Carrito</a>
+                    <button class="btn btn-outline-secondary btn-lg"><i class="fas fa-heart"></i> Lista de Deseos</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
