@@ -1,6 +1,6 @@
-# Proyecto Cooll Play - Sustentación Técnica
+# Proyecto Orion Play - Sustentación Técnica
 
-Este repositorio contiene la implementación del proyecto **Cooll Play**, una tienda de videojuegos en línea diseñada con un enfoque educativo para demostrar el dominio de múltiples tecnologías frontend.
+Este repositorio contiene la implementación del proyecto **Orion Play**, una tienda de videojuegos en línea diseñada con un enfoque educativo para demostrar el dominio de múltiples tecnologías frontend.
 
 ## 🎯 Cumplimiento de la Rúbrica (Nivel Excelente)
 

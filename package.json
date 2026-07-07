@@ -1,7 +1,7 @@
 {
   "name": "orion-play",
   "version": "1.0.0",
-  "description": "Cooll Play - Tienda de Videojuegos (Proyecto HTML/CSS/JS)",
+  "description": "Orion Play - Tienda de Videojuegos (Proyecto HTML/CSS/JS)",
   "main": "index.html",
   "scripts": {
     "build:sass": "sass scss/main.scss css/main-sass.css",
@@ -15,7 +15,7 @@
     "less",
     "responsive"
   ],
-  "author": "Cooll Play Team",
+  "author": "Orion Play Team",
   "license": "ISC",
   "devDependencies": {
     "less": "^4.2.0",
