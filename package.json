@@ -1,0 +1,24 @@
+{
+  "name": "orion-play",
+  "version": "1.0.0",
+  "description": "Cooll Play - Tienda de Videojuegos (Proyecto HTML/CSS/JS)",
+  "main": "index.html",
+  "scripts": {
+    "build:sass": "sass scss/main.scss css/main-sass.css",
+    "build:less": "lessc less/main.less css/main-less.css",
+    "build": "npm run build:sass && npm run build:less"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "sass",
+    "less",
+    "responsive"
+  ],
+  "author": "Cooll Play Team",
+  "license": "ISC",
+  "devDependencies": {
+    "less": "^4.2.0",
+    "sass": "^1.72.0"
+  }
+}

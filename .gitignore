@@ -1,0 +1,6 @@
+node_modules/
+
+# Archivos generados por npm run build (sass/less -> css)
+css/main-sass.css
+css/main-sass.css.map
+css/main-less.css

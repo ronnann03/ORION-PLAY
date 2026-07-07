@@ -1,0 +1,84 @@
+@import "variables.less";
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: @bg-color;
+  color: @text-color;
+}
+
+.profile-container {
+  max-width: 800px;
+  margin: @large-padding auto;
+  padding: @base-padding;
+}
+
+.profile-card {
+  background-color: @bg-card;
+  border-radius: @border-radius;
+  padding: @large-padding;
+  .box-shadow();
+  
+  // Nested rules
+  .header {
+    .flex-center();
+    flex-direction: column;
+    margin-bottom: @large-padding;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: @large-padding;
+
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid @primary-color;
+      margin-bottom: @base-padding;
+    }
+
+    h2 {
+      margin: 0;
+      color: @text-color;
+    }
+
+    p {
+      color: @text-muted;
+      margin-top: @small-padding;
+    }
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    
+    .stat-item {
+      text-align: center;
+      
+      h3 {
+        font-size: 2rem;
+        color: @secondary-color;
+        margin: 0;
+      }
+      
+      span {
+        color: @text-muted;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+.btn-edit {
+  background-color: @primary-color;
+  color: white;
+  border: none;
+  padding: @small-padding @base-padding;
+  border-radius: @border-radius;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    // Math operation for color darkening
+    background-color: darken(@primary-color, 10%);
+  }
+}
